@@ -1183,7 +1183,7 @@ def render_search_page() -> None:
     st.markdown(
         f'<div class="blue-heading">{len(items)} Ergebnisse</div>',
         unsafe_allow_html=True,
-    )'
+    )
 
     if not items:
         st.info("Keine passenden Einträge gefunden.")
