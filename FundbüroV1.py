@@ -1462,7 +1462,7 @@ Die korrekte Version verwendet am Anfang und Ende dieselbe Anführungszeichenart
 4. Datei requirements.txt
 text
 
-streamlit>=1.40,<2.0pillow>=10.0,<12.0numpy>=1.26,<3.0tensorflow-cpu==2.15.1
+
 
 TensorFlow wird bewusst als tensorflow-cpu eingebunden, weil Streamlit Cloud keine GPU benötigt.
 
