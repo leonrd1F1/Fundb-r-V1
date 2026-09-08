@@ -1469,7 +1469,7 @@ TensorFlow wird bewusst als tensorflow-cpu eingebunden, weil Streamlit Cloud kei
 Falls du zuerst ohne KI testen möchtest, kannst du vorübergehend diese Datei verwenden:
 text
 
-streamlit>=1.40,<2.0pillow>=10.0,<12.0numpy>=1.26,<3.0
+
 
 Die App funktioniert dann trotzdem. Nur die Bilderkennung ist deaktiviert.
 5. Datei runtime.txt
