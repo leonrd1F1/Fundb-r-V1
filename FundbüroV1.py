@@ -1207,7 +1207,13 @@ def render_admin_page() -> None:
 
         password = st.text_input(
             "Admin-Passwort",
-            type="pas        )        connection.commit()
+       password = st.text_input(
+    "Passwort",
+    type="password"
+)
+
+connection.commit()
+
 
 def get_items(    item_type: str | None = None,    category: str | None = None,    date_filter: str | None = None,    search: str = "",    status: str | None = None,) -> list[sqlite3.Row]:    query = "SELECT * FROM items WHERE 1 = 1"    parameters: list[Any] = []
     if item_type:        query += " AND item_type = ?"        parameters.append(item_type)
