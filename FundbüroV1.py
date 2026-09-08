@@ -1121,7 +1121,7 @@ def render_lost_form() -> None:
 
 
 def render_search_page() -> None:
-    st.markdown('<div class="page-title">Fundgrube</div>', unsafe_allow_html=True)
+    st.markdown('<div class="page-title">Fundgrube</div>', unsafe_allow_html=True)'
 
     st.markdown('<div class="blue-heading">Filter</div>', unsafe_allow_html=True)
 
@@ -1183,7 +1183,7 @@ def render_search_page() -> None:
     st.markdown(
         f'<div class="blue-heading">{len(items)} Ergebnisse</div>',
         unsafe_allow_html=True,
-    )
+    )'
 
     if not items:
         st.info("Keine passenden Einträge gefunden.")
@@ -1322,7 +1322,7 @@ def render_item_card(item: sqlite3.Row) -> None:    image_path = item["image_pat
 def render_home() -> None:    render_logo()
     st.markdown(        """        <div class="hero-box">            <h2>Willkommen im digitalen Fundbüro</h2>            <p>                Hier kannst du verlorene Gegenstände melden, gefundene Gegenstände                eintragen und aktuelle Fundstücke durchsuchen.            </p>        </div>        """,        unsafe_allow_html=True,    )
     left, right = st.columns(2, gap="large")
-    with left:        render_red_action_button(            "ICH HABE",            "VERLOREN",            "verloren",            "home_lost",        )
+    with left:        render_red_action_button(            "ICH HABE",            "VERLOREN",            "verloren",      '      "home_lost",        )
     with right:        render_red_action_button(            "ICH HABE",            "GEFUNDEN",            "gefunden",            "home_found",        )
     st.markdown('<div class="blue-heading">Aktuelle Fundstücke</div>', unsafe_allow_html=True)
     recent_items = get_items(item_type="found", status="Gefunden")[:4]
@@ -1373,7 +1373,7 @@ def render_lost_form() -> None:    st.markdown('<div class="page-title">Verloren
         column_a, column_b = st.columns(2)
         with column_a:            location = st.text_input(                "Verlustort",                placeholder="Zum Beispiel: Sporthalle",            )
         with column_b:            item_date = st.date_input(                "Verlustdatum *",                value=date.today(),            )
-        additional_information = st.text_area(            "Weitere Informationen",            placeholder="Zum Beispiel: zuletzt nach der sechsten Stunde gesehen",        )
+        additional_information = st.text_area(            "Weitere Informationen",            placeholder="Zum Beispiel: z'uletzt nach der sechsten Stunde gesehen",        )
         submitted = st.form_submit_button(            "Verlustmeldung speichern",            type="primary",            use_container_width=True,        )
     if submitted:        if not name.strip():            st.error("Bitte gib einen Gegenstandsnamen ein.")            return
         saved_image = save_uploaded_image(uploaded_file)
@@ -1407,7 +1407,7 @@ def render_admin_page() -> None:    st.markdown('<div class="page-title">Admin-B
     if st.button("Abmelden"):        st.session_state["admin_authenticated"] = False        st.rerun()
     items = get_items()
     if not items:        st.info("Es sind noch keine Einträge vorhanden.")        return
-    st.markdown('<div class="blue-heading">Einträge verwalten</div>", unsafe_allow_html=True)
+    st.markdown('<div class="blue-heading">Einträge verwalten</div>', unsafe_allow_html=True)
     selected_id = st.selectbox(        "Eintrag auswählen",        options=[item["id"] for item in items],        format_func=lambda item_id: next(            (                f"{item['name']} – {item['item_type']} – ID {item['id']}"                for item in items                if item["id"] == item_id            ),            f"ID {item_id}",        ),    )
     selected_item = get_item(selected_id)
     if selected_item is None:        st.error("Der Eintrag wurde nicht gefunden.")        return
