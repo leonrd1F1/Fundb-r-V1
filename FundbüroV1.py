@@ -1121,7 +1121,7 @@ def render_lost_form() -> None:
 
 
 def render_search_page() -> None:
-    st.markdown('<div class="page-title">Fundgrube</div>', unsafe_allow_html=True)'
+    st.markdown('<div class="page-title">Fundgrube</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="blue-heading">Filter</div>', unsafe_allow_html=True)
 
