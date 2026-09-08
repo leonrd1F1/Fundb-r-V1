@@ -1322,7 +1322,7 @@ def render_item_card(item: sqlite3.Row) -> None:    image_path = item["image_pat
 def render_home() -> None:    render_logo()
     st.markdown(        """        <div class="hero-box">            <h2>Willkommen im digitalen Fundbüro</h2>            <p>                Hier kannst du verlorene Gegenstände melden, gefundene Gegenstände                eintragen und aktuelle Fundstücke durchsuchen.            </p>        </div>        """,        unsafe_allow_html=True,    )
     left, right = st.columns(2, gap="large")
-    with left:        render_red_action_button(            "ICH HABE",            "VERLOREN",            "verloren",      '      "home_lost",        )
+    with left:        render_red_action_button(            "ICH HABE",            "VERLOREN",            "verloren",            "home_lost",        )
     with right:        render_red_action_button(            "ICH HABE",            "GEFUNDEN",            "gefunden",            "home_found",        )
     st.markdown('<div class="blue-heading">Aktuelle Fundstücke</div>', unsafe_allow_html=True)
     recent_items = get_items(item_type="found", status="Gefunden")[:4]
