@@ -1456,7 +1456,7 @@ st.markdown(    '<div class="blue-heading">Einträge verwalten</div>',    unsafe
 Sie muss also nicht so aussehen:
 python
 
-st.markdown('<div class="blue-heading">Einträge verwalten</div>", unsafe_allow_html=True)
+st.markdown('<div class="blue-heading">Einträge verwalten</div>', unsafe_allow_html=True)
 
 Die korrekte Version verwendet am Anfang und Ende dieselbe Anführungszeichenart.
 4. Datei requirements.txt
